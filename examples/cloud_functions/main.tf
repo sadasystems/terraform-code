@@ -1,5 +1,5 @@
 module "geralt_of_rivia" {
-  source                             = "../../GoogleCloud/Cloud_Functions"
+  source                             = "../../Cloud_Functions"
   gcp_project_id                     = var.project_id
   region                             = var.region
   cloud_func_name                    = "geralt-of-rivia"
