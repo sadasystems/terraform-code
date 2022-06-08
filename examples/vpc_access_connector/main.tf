@@ -1,5 +1,5 @@
 module "stromtropper" {
-  source         = "../../GoogleCloud/VPC_Access_Connector"
+  source         = "../../VPC_Access_Connector"
   gcp_project_id = var.project_id
   connector_name = "stromtropper"
   vpc_name       = var.vpc_name
