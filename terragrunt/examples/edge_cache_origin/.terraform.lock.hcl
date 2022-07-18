@@ -1,0 +1,41 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/hashicorp/google" {
+  version     = "4.24.0"
+  constraints = "4.24.0"
+  hashes = [
+    "h1:wzNIHN+K7KLSJ+J9Hmy2GkSQ5iM8GhDZNcJQlyfZfQM=",
+    "zh:0e8b2d19cdd760abb553649ea24e30111e9fc482219724392408873172082f12",
+    "zh:100bd6cf987578a9d8151a985d55a391d02d8e3739b34a839c84ed3d00fa3dba",
+    "zh:246bed00b3739843571ccefee0cea37b7d0976071887dc688185e819290fcb1e",
+    "zh:69c8c2ab979d169ceee9db0d7b1b6d8b3e3a15471841045486f9e019141127c9",
+    "zh:793508c550735b607283c2332cda5414cc7802e7a184d00f650dce42b872b58b",
+    "zh:793a56fb23bea8fea77173f0d92cad95b0ee4f2d082f7c91a8a8805c9278186e",
+    "zh:b1009da672430f4f07223d5fcdd203ae8474ef70af9005f61233bdfc8a7e4210",
+    "zh:c0baa32e0d72c267bdd7600f8308734ab2b23500657493e9125bb76f477602f4",
+    "zh:df196483ea7b01cefbd865ad574a820a2ee20360f1739e3a1e40e3f94bf68fca",
+    "zh:f194539caaa4183d42936ba4dd90460f9b057d5981845a202d86beabaaaa5085",
+    "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
+    "zh:fbab4ee1bbe8938a872070815a4670007c4f42f52c8f955b6d674301d00d9f16",
+  ]
+}
+
+provider "registry.terraform.io/hashicorp/google-beta" {
+  version = "4.27.0"
+  hashes = [
+    "h1:cZr00YM79sHBoSGDNxSTsn8sirHQPOUk1309zxfWAJU=",
+    "zh:0b1e17291c64b4a932ef22300c316c3fe84a21c79c1fcdad9f92cc14144632e9",
+    "zh:10c8f7bf1f6f4de8d687de7185e572d1234c39990a3374cd523013e00a9c3c95",
+    "zh:2020ec32dea0fe05308cd0da068da49a5daa087453a494c041f1808131e1bc57",
+    "zh:4b2fb805f53bc033709eb1f62e260eba61e81f91cf8f56cb71f4dd48523aee0b",
+    "zh:66b0bc5e228019b8075cb8f5f7ebd61176f61774a1c6790b4dfe2d0b5db434b3",
+    "zh:6888824c149f3333c917c201c6a36a2dbe8364e6a19c2f42b800c37e2af3ac41",
+    "zh:6914ffc9c64d92cd7d06da83a9a17340633b4dcad674cf550e34a71f47ca5b13",
+    "zh:a4aedaa9b00863f6a96f7865dacf2868dc3c06f7eca435bb76fa90ad9bef1b07",
+    "zh:a8a7f7434052a7249c0793cfaacdb9f942a16e270ebedaaf8e6b58d34e5f57da",
+    "zh:e9ef158108f87ec6119b8abc1dfd35a7a4d9e29a798287f767613bc3bb16c59a",
+    "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
+    "zh:fc131aa32c057f937ca7e86a7eb1793ef9cae44af9d95dc122888427ea470b0d",
+  ]
+}
