@@ -11,57 +11,74 @@ variable "media_cdn_service_name" {
 
 variable "routing" {
   description = "routing"
-  default = null
-  type = any
+  default     = null
+  type        = any
 }
 
 variable "host_rule" {
-  description = "host_rule"
-  default = null
-  type = any
+  description = "External networks that can access the MySQL master instance through HTTPS."
+  type = list(object({
+    hosts        = list(string)
+    path_matcher = string
+  }))
+  default = []
 }
 
 variable "path_matcher" {
   description = "path_matcher"
-  default = null
-  type = any
+  default     = []
+  type = list(object({
+    name = string
+    route_rule = list(object({
+      priority = string
+      origin   = string
+      match_rule = list(object({
+        ignore_case  = string
+        prefix_match = string
+        # full_path_match = string
+        # path_template_match = string
+      }))
+    }))
+  }))
 
 }
 
-variable "route_rule" {
-  description = "route_rule"
-  default = null
-  type = any
-}
+# variable "route_rule" {
+#   description = "route_rule"
+#   default = []
+#   type = list(object({
+#     priority = string
+#   }))
+# }
 
-variable "match_rule" {
-  description = "match_rule"
-  default = null
-  type = any
-}
+# variable "match_rule" {
+#   description = "match_rule"
+#   default = null
+#   type = any
+# }
 
 variable "route_action" {
   description = "route_action"
-  default = null
-  type = any
+  default     = null
+  type        = any
 }
 
 variable "cdn_policy" {
   description = "cdn_policy"
-  default = null
-  type = any
+  default     = null
+  type        = any
 }
 
 variable "header_action" {
   description = "header_action"
-  default = null
-  type = any
+  default     = null
+  type        = any
 }
 
 variable "response_header_to_add" {
   description = "response_header_to_add"
-  default = null
-  type = any
+  default     = null
+  type        = any
 }
 
 

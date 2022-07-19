@@ -16,5 +16,5 @@ module "spirits" {
   #     read_timeout = "5s"
   #   }
 
-    create_fallback_origin = true
+  create_fallback_origin = true
 }
