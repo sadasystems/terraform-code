@@ -1,6 +1,3 @@
-locals {
-  
-}
 module "avicii" {
   source                 = "../../../Media_CDN/wip_Media_CDN_Edge_Cache_Service"
   gcp_project_id         = var.project_id
@@ -25,12 +22,16 @@ module "avicii" {
           origin   = "cloud-storage-origin"
           match_rule = [
             {
-              ignore_case  = "true"
-              prefix_match = "/home/nohome"
+              ignore_case         = "true"
+              prefix_match        = "/home/nohome"
+              full_path_match     = null
+              path_template_match = null
             },
             {
-              ignore_case  = "false"
-              prefix_match = "/home"
+              ignore_case         = "false"
+              prefix_match        = null
+              full_path_match     = "/full/path"
+              path_template_match = null
             }
           ]
         },
@@ -39,12 +40,16 @@ module "avicii" {
           origin   = "loki"
           match_rule = [
             {
-              ignore_case  = "true"
-              prefix_match = "/"
+              ignore_case         = "true"
+              prefix_match        = "/"
+              full_path_match     = null
+              path_template_match = null
             },
             {
-              ignore_case  = "false"
-              prefix_match = "/home"
+              ignore_case         = "false"
+              prefix_match        = "/home"
+              full_path_match     = null
+              path_template_match = null
             }
           ]
         }
@@ -58,8 +63,10 @@ module "avicii" {
           origin   = "loki"
           match_rule = [
             {
-              ignore_case  = "true"
-              prefix_match = "/"
+              ignore_case         = "true"
+              prefix_match        = null
+              full_path_match     = null
+              path_template_match = "/*/*.mp4"
             }
           ]
         }

@@ -14,12 +14,12 @@ variable "zone" {
 
 variable "prefix_match" {
   default = ["", "/home", "/nohome", "/rohan"]
-  type = list(string)
+  type    = list(string)
 }
 
 variable "full_path_match" {
   default = ["", "/full/path", "path/match", "match/full"]
-  type = list(string)
+  type    = list(string)
 }
 
 # variable "path_template_match" {

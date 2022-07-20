@@ -33,23 +33,14 @@ variable "path_matcher" {
       priority = string
       origin   = string
       match_rule = list(object({
-        ignore_case  = string
-        prefix_match = string
-        # full_path_match = string
-        # path_template_match = string
+        ignore_case         = string
+        prefix_match        = string
+        full_path_match     = string
+        path_template_match = string
       }))
     }))
   }))
-
 }
-
-# variable "route_rule" {
-#   description = "route_rule"
-#   default = []
-#   type = list(object({
-#     priority = string
-#   }))
-# }
 
 # variable "match_rule" {
 #   description = "match_rule"

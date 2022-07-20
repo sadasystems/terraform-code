@@ -39,10 +39,10 @@ resource "google_network_services_edge_cache_service" "media_cdn_service" {
             dynamic "match_rule" {
               for_each = route_rule.value.match_rule
               content {
-                ignore_case  = match_rule.value.ignore_case
-                prefix_match = match_rule.value.prefix_match
-                # path_template_match = match_rule.value.path_template_match
-                # full_path_match = match_rule.value.full_path_match
+                ignore_case         = match_rule.value.ignore_case
+                prefix_match        = match_rule.value.prefix_match
+                full_path_match     = match_rule.value.full_path_match
+                path_template_match = match_rule.value.path_template_match
               }
             }
             route_action {
