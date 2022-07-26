@@ -13,18 +13,18 @@ resource "google_project_service" "networking_api" {
 }
 
 resource "google_network_services_edge_cache_service" "media_cdn_service" {
-  provider = google-beta
-  project  = var.gcp_project_id
-  name     = local.media_cdn_service_name
-  disable_http2 = var.disable_http2
-  disable_quic = var.disable_quic
-  require_tls = var.require_tls
+  provider              = google-beta
+  project               = var.project_id
+  name                  = local.media_cdn_service_name
+  disable_http2         = var.disable_http2
+  disable_quic          = var.disable_quic
+  require_tls           = var.require_tls
   edge_ssl_certificates = var.edge_ssl_certificates
-  edge_security_policy = var.edge_security_policy
+  edge_security_policy  = var.edge_security_policy
   dynamic "log_config" {
-    for_each =  var.log_config == null ? null : [var.log_config]
+    for_each = var.log_config == null ? null : [var.log_config]
     content {
-      enable = var.log_config["enable"]
+      enable      = var.log_config["enable"]
       sample_rate = var.log_config["sample_rate"]
     }
   }

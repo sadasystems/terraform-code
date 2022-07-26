@@ -1,6 +1,6 @@
 module "avicii" {
   source                 = "../../../Media_CDN/Media_CDN_Edge_Cache_Service"
-  gcp_project_id         = var.project_id
+  project_id             = var.project_id
   media_cdn_service_name = "avicii"
 
   host_rule = [
@@ -18,18 +18,18 @@ module "avicii" {
       name = "routes"
       route_rule = [
         {
-          priority = "1"
+          priority = 1
           origin   = "cloud-storage-origin"
           match_rule = [
             {
-              ignore_case           = "true"
-              prefix_match          = "/home/nohome"
-              full_path_match       = null
-              path_template_match   = null
-              header_match          = [
+              ignore_case         = true
+              prefix_match        = "/home/nohome"
+              full_path_match     = null
+              path_template_match = null
+              header_match = [
                 {
                   header_name   = "default"
-                  present_match = "true"
+                  present_match = true
                   exact_match   = null
                   prefix_match  = null
                   suffix_match  = null
@@ -39,11 +39,11 @@ module "avicii" {
               query_parameter_match = []
             },
             {
-              ignore_case           = "false"
-              prefix_match          = null
-              full_path_match       = "/full/path"
-              path_template_match   = null
-              header_match          = [
+              ignore_case         = false
+              prefix_match        = null
+              full_path_match     = "/full/path"
+              path_template_match = null
+              header_match = [
                 {
                   header_name   = "default-02"
                   present_match = null
@@ -63,8 +63,8 @@ module "avicii" {
               ]
               query_parameter_match = [
                 {
-                  name = "state"
-                  exact_match = "debug"
+                  name          = "state"
+                  exact_match   = "debug"
                   present_match = null
                 }
               ]
@@ -74,11 +74,11 @@ module "avicii" {
           url_redirect = []
         },
         {
-          priority = "4"
+          priority = 4
           origin   = "loki"
           match_rule = [
             {
-              ignore_case           = "true"
+              ignore_case           = true
               prefix_match          = "/"
               full_path_match       = null
               path_template_match   = null
@@ -86,25 +86,25 @@ module "avicii" {
               query_parameter_match = []
             },
             {
-              ignore_case           = "false"
-              prefix_match          = "/home"
-              full_path_match       = null
-              path_template_match   = null
-              header_match          = [
+              ignore_case         = false
+              prefix_match        = "/home"
+              full_path_match     = null
+              path_template_match = null
+              header_match = [
                 {
                   header_name   = "default-02"
                   present_match = null
                   exact_match   = null
                   prefix_match  = null
                   suffix_match  = "/suffix/match"
-                  invert_match  = "true"
+                  invert_match  = true
                 }
               ]
               query_parameter_match = [
                 {
-                  name = "state-02"
-                  present_match = "true"
-                  exact_match = null
+                  name          = "state-02"
+                  present_match = true
+                  exact_match   = null
                 }
               ]
             }
@@ -118,11 +118,11 @@ module "avicii" {
       name = "roooooutes"
       route_rule = [
         {
-          priority = "3"
-          origin = null
+          priority = 3
+          origin   = null
           match_rule = [
             {
-              ignore_case           = "true"
+              ignore_case           = true
               prefix_match          = null
               full_path_match       = null
               path_template_match   = "/*/*.mp4"
@@ -134,22 +134,22 @@ module "avicii" {
             {
               cdn_policy = [
                 {
-                  cache_mode = "CACHE_ALL_STATIC"
-                  client_ttl = "3600s"
-                  default_ttl = "3800s"
-                  max_ttl = "9000s"
+                  cache_mode       = "CACHE_ALL_STATIC"
+                  client_ttl       = "3600s"
+                  default_ttl      = "3800s"
+                  max_ttl          = "9000s"
                   negative_caching = true
                   negative_caching_policy = {
                     "500" = "3000s"
                   }
-                  signed_request_mode = "DISABLED"
+                  signed_request_mode   = "DISABLED"
                   signed_request_keyset = null
                 },
               ]
               url_rewrite = [
                 {
-                  path_prefix_rewrite = "/dev"
-                  host_rewrite = "dev.club"
+                  path_prefix_rewrite   = "/dev"
+                  host_rewrite          = "dev.club"
                   path_template_rewrite = null
                 }
               ]
@@ -158,12 +158,12 @@ module "avicii" {
           ]
           url_redirect = [
             {
-              host_redirect = "dummy-value.com"
-              path_redirect = null
-              prefix_redirect = null
+              host_redirect          = "dummy-value.com"
+              path_redirect          = null
+              prefix_redirect        = null
               redirect_response_code = "FOUND"
-              https_redirect = "true"
-              strip_query = "true"
+              https_redirect         = true
+              strip_query            = true
             }
           ]
         }
