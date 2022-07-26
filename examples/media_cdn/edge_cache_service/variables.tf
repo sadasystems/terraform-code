@@ -12,20 +12,14 @@ variable "zone" {
   description = "The zone that the machine should be created in."
 }
 
-variable "prefix_match" {
-  default = ["", "/home", "/nohome", "/rohan"]
-  type    = list(string)
-}
-
-variable "full_path_match" {
-  default = ["", "/full/path", "path/match", "match/full"]
-  type    = list(string)
-}
-
 # variable "path_template_match" {
 #   default = [null, "/*/path", "/*/path/path2"]
 #   type = list(string)
 # }
+
+variable "header_name" {
+  default = ["", "rohan", "sada"]
+}
 
 # variable "vpc_name" {
 #   description = "GCP VPC Name self link in which GCP Cloud Function being created."
