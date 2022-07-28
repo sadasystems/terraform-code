@@ -72,6 +72,14 @@ module "avicii" {
           ]
           route_action = []
           url_redirect = []
+          header_action = [
+            {
+              request_header_to_add = []
+              response_header_to_add = []
+              request_header_to_remove = []
+              response_header_to_remove = []
+            }
+          ]
         },
         {
           priority = 4
@@ -111,6 +119,18 @@ module "avicii" {
           ]
           route_action = []
           url_redirect = []
+          header_action = [
+            {
+              request_header_to_add = []
+              response_header_to_add = []
+              request_header_to_remove = []
+              response_header_to_remove = [
+                {
+                  header_name = "dummy-header-name"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -128,6 +148,20 @@ module "avicii" {
               path_template_match   = "/*/*.mp4"
               header_match          = []
               query_parameter_match = []
+            }
+          ]
+          header_action = [
+            {
+              request_header_to_add = [
+                {
+                  header_name  = "dummy-header-name"
+                  header_value = "dummy-header-value"
+                  replace      = false
+                }
+              ]
+              response_header_to_add = []
+              request_header_to_remove = []
+              response_header_to_remove = []
             }
           ]
           route_action = [
