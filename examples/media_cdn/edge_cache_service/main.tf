@@ -72,14 +72,7 @@ module "avicii" {
           ]
           route_action = []
           url_redirect = []
-          header_action = [
-            {
-              request_header_to_add = []
-              response_header_to_add = []
-              request_header_to_remove = []
-              response_header_to_remove = []
-            }
-          ]
+          header_action = []
         },
         {
           priority = 4
@@ -122,11 +115,17 @@ module "avicii" {
           header_action = [
             {
               request_header_to_add = []
-              response_header_to_add = []
+              response_header_to_add = [
+                {
+                  header_name  = "dummy-header-02-name"
+                  header_value = "dummy-header-02-value"
+                  replace      = false
+                }
+              ]
               request_header_to_remove = []
               response_header_to_remove = [
                 {
-                  header_name = "dummy-header-name"
+                  header_name = "dummy-header-03-name"
                 }
               ]
             }
@@ -154,9 +153,9 @@ module "avicii" {
             {
               request_header_to_add = [
                 {
-                  header_name  = "dummy-header-name"
-                  header_value = "dummy-header-value"
-                  replace      = false
+                  header_name  = "dummy-header-04-name"
+                  header_value = "dummy-header-04-value"
+                  replace      = true
                 }
               ]
               response_header_to_add = []
